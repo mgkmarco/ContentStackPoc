@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        <div class="form-group">
+            <label for="entryTitle">Entry Title</label>
+            <input type="text" class="form-control" id="entryTitle" name="entryTitle" placeholder="Entry Title">
+        </div>
+
+        <div class="form-group">
+            <label for="localesSelect">Select Locale</label>
+            <select class="form-control" id="localesSelect" name="locale">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="links">Link</label>
+            <div id="links" class="form-row">
+                <div class="col">
+                    <input type="text" id="linkTitle" class="form-control" name="linkTitle" placeholder="title">
+                </div>
+                <div class="col">
+                    <input type="url" id="linkUrl" class="form-control" name="linkUrl" placeholder="link url">
+                </div>
+            </div>
+        </div>
+
+        @*<div class="container">
+            <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Assets</h1>
+            <hr class="mt-2 mb-5">
+            <div id="globalAssetsTb" class="row text-center text-lg-start">
+            </div>
+            <ol id="globalAssetList">
+            </ol>
+        </div>
+
+        <div class="row py-4">
+            <div class="col-lg-6 mx-auto">
+
+                Upload image input
+                <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <div class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                    </div>
+                </div>
+
+                Uploaded image area
+                <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+                <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                <input id="assetTitle" type="text" class="form-control border-0" placeholder="Asset Title">
+                <button type="button" class="btn btn-info btn-sm" onclick="uploadAsset()">Upload Asset</button>
+
+            </div>
+        </div>*@
+
+        @*<input id="entryUid" type="hidden" name="entryUid">*@
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#assetUploadsCollapse" aria-expanded="false" aria-controls="assetUploadsCollapse">Assets</button>
+        <button type="button" class="btn btn-primary" onclick="createEntry()">Create New Entry</button>
+    </p>
+</div>
+<script src="~/js/site.js" asp-append-version="true"></script>

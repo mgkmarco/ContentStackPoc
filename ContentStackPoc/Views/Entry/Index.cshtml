@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="form-group">
+        <label for="entriesSelect">Select Entry</label>
+        <select class="form-control" id="entriesSelect" name="entry" onchange="entryChanged(this)">
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="localesSelect">Locale</label>
+            <select class="form-control" id="localesSelect" onchange="localeChanged(this)" name="locale"></select>
+        </div>
+        <div class="col">
+            <label for="entryTitle">Title</label>
+            <input readonly type="text" class="form-control" id="entryTitle" name="entryTitle" placeholder="Entry Title">
+        </div>
+        <div class="col">
+            <label for="versionSelect" id="version" class="badge badge-primary">Version</label>
+            <select class="form-control" id="versionSelect" onchange="versionChanged(this)" name="locale"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div id="links" class="form-row">
+            <div class="col">
+                <label for="linkTitle">Link Title</label>
+                <input type="text" id="linkTitle" class="form-control" name="linkTitle" placeholder="title">
+            </div>
+            <div class="col">
+                <label for="linkUrl">Link Url</label>
+                <input type="url" id="linkUrl" class="form-control" name="linkUrl" placeholder="link url">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Entry Assets</h1>
+        <hr class="mt-2 mb-5">
+        <div id="assetsTb" class="row text-center text-lg-start">
+        </div>
+        <ol id="assetList">
+        </ol>
+    </div>
+
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#assetUploadsCollapse" aria-expanded="false" aria-controls="assetUploadsCollapse">Assets</button>
+        <button type="button" class="btn btn-primary" onclick="saveEntry()">Save Entry</button>
+        <button type="button" onclick="publish()" class="btn btn-primary">Publish Entry</button>
+    </p>
+</div>
+<script src="~/js/entry.js" asp-append-version="true"></script>
