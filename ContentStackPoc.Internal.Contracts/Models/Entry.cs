@@ -18,5 +18,8 @@ namespace ContentManagementService.Models
 
         [JsonProperty("assets")]
         public string[] Assets { get; set; }
+
+        [JsonProperty("richtext")]
+        public string RichText { get; set; }
     }
 }

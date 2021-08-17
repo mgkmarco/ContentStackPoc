@@ -8,5 +8,6 @@
         public string LinkTitle { get; set; }
         public string LinkUrl { get; set; }
         public string[] Assets { get; set; }
+        public string RichText { get; set; }
     }
 }

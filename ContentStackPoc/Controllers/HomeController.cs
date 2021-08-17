@@ -66,7 +66,8 @@ namespace ContentStackPoc.Controllers
                 EntryTitle = entryDto.EntryTitle,
                 LinkTitle = entryDto.LinkTitle,
                 LinkUrl = entryDto.LinkUrl,
-                Assets = entryDto.Assets
+                Assets = entryDto.Assets,
+                RichText = entryDto.RichText
             };
 
             //this is a pretend 

@@ -74,6 +74,9 @@ function updateEntryData(data, locale, includeVersionSelect = true) {
     $('#entryTitle').val(data.title);
     $('#linkTitle').val(data.links[0].link.title);
     $('#linkUrl').val(data.links[0].link.href);
+    $('#richTextPreview').empty().append(data.texts[0].text);
+    $('#summernote').summernote('code', '');
+    $('#summernote').summernote('code', data.texts[0].text);
 }
 
 function entryChanged(sel) {
@@ -175,9 +178,14 @@ function removeFromAssetList(assetUid) {
     $('#' + assetUid).remove();
 } 
 
-function saveEntry() {
+function copyEntry() {
+    saveEntry(true);
+}
+
+function saveEntry(isCopy = false) {
     var entry = JSON.parse($('#entriesSelect').val());
-    var uid = entry["uid"];
+    var richtext = $('#summernote').summernote('code');
+    var uid = entry['uid'];
     var title = $('#entryTitle').val();
     var locale = $('#localesSelect').val();
     var linkTitle = $('#linkTitle').val();
@@ -195,12 +203,17 @@ function saveEntry() {
     }
 
     var data = {
-        entryUid: uid,
-        entryTitle: title,
+        entryTitle: title + '- COPY',
         locale: locale,
         linkTitle: linkTitle,
         linkUrl: linkUrl,
-        assets: assets
+        assets: assets,
+        richtext: richtext
+    }
+
+    if (!isCopy) {
+        data.entryUid = uid;
+        data.entryTitle = title;
     }
 
     $.ajax({
@@ -216,7 +229,7 @@ function saveEntry() {
     });
 }
 
-function publish() {
+function publishEntry() {
     var entry = JSON.parse($('#entriesSelect').val());
     var uid = entry["uid"];
     var locale = $('#localesSelect').val();

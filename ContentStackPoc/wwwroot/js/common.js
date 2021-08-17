@@ -3,6 +3,17 @@
     $('#upload').on('change', function () {
         readURL(input);
     });
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
 });
 
 function fetchGlobalAssets(id) {

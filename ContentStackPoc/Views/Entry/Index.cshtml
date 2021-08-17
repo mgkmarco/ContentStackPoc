@@ -40,6 +40,19 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <div id="richText" class="form-row">
+            <div class="col">
+                <label for="Rich Text Editor">Rich Text Editor</label>
+                <div id="summernote">Hello Summernote</div>
+            </div>
+            <div class="col">
+                <label for="richTextPreview">Rich Text Preview</label>
+                <div class="note-frame card" id="richTextPreview"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Entry Assets</h1>
         <hr class="mt-2 mb-5">
@@ -51,8 +64,9 @@
 
     <p>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#assetUploadsCollapse" aria-expanded="false" aria-controls="assetUploadsCollapse">Assets</button>
+        <button type="button" onclick="copyEntry()" class="btn btn-primary">Copy Entry</button>
         <button type="button" class="btn btn-primary" onclick="saveEntry()">Save Entry</button>
-        <button type="button" onclick="publish()" class="btn btn-primary">Publish Entry</button>
+        <button type="button" onclick="publishEntry()" class="btn btn-primary">Publish Entry</button>
     </p>
 </div>
 <script src="~/js/entry.js" asp-append-version="true"></script>

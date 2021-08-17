@@ -118,7 +118,7 @@ namespace ContentManagementService.Services
                     new TextField
                     {
                         Key = $"{entry.EntryTitle}_{nameof(WidgetContentTypeFetchResponse.Texts)}_key{1}",
-                        Text = entry.EntryTitle
+                        Text = entry.RichText
                     }
                 },
                     Links = links,
@@ -141,13 +141,13 @@ namespace ContentManagementService.Services
                 {
                     Title = entryKey,
                     Texts = new List<TextField>
-                {
-                    new TextField
                     {
-                        Key = $"{entryKey}_{nameof(WidgetContentTypeFetchResponse.Texts)}_key{1}",
-                        Text = entry.EntryTitle
-                    }
-                },
+                        new TextField
+                        {
+                            Key = $"{entryKey}_{nameof(WidgetContentTypeFetchResponse.Texts)}_key{1}",
+                            Text = entry.RichText
+                        }
+                    },
                     Links = links,
                     Images = images
                 };

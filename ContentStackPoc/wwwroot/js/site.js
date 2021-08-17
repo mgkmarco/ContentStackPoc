@@ -26,6 +26,7 @@ function fetchLocales(id) {
 
 function createEntry() {
     var title = $('#entryTitle').val();
+    var richtext = $('#summernote').summernote('code');
     var locale = $('#localesSelect').val();
     var linkTitle = $('#linkTitle').val();
     var linkUrl = $('#linkUrl').val();
@@ -41,7 +42,8 @@ function createEntry() {
         locale: locale,
         linkTitle: linkTitle,
         linkUrl: linkUrl,
-        assets: assets
+        assets: assets,
+        richText: richtext
     }
 
     $.ajax({
