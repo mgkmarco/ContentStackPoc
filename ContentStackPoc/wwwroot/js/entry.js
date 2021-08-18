@@ -222,9 +222,15 @@ function saveEntry(isCopy = false) {
         dataType: 'json',
         data: data,
         success: function (result) {
-            fetchEntry(uid, locale, null, function (data) {
-                updateEntryData(data, locale);
-            });
+            if (isCopy) {
+                $('#entriesSelect').empty();
+                fetchEntries("entriesSelect");
+            }
+            else {
+                fetchEntry(uid, locale, null, function (data) {
+                    updateEntryData(data, locale);
+                });
+            }
         }
     });
 }
